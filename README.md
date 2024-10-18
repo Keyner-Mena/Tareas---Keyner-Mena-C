@@ -1,3 +1,5 @@
-# Práctica 1 
+# Prácticas Des. Plataformas abiertas
+
 ---
-###  Keyner Mena C.
+
+### Keyner Mena C.

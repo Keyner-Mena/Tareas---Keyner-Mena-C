@@ -1,0 +1,6 @@
+ENDPOINT PRINCIPAL:
+http://localhost/tareas---keyner-mena-c/Practica-3/public/index.php/usuarios
+
+
+ENDPOINT CON UN PARÁMETRO: 
+http://localhost/tareas---keyner-mena-c/Practica-3/public/index.php/usuarios?id=4

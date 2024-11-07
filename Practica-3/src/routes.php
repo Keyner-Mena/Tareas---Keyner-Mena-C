@@ -1,4 +1,5 @@
 <?php
+require_once "../src/controllers/UsuariosController.php";
 
 // ENDPOINT PRINCIPAL: http://localhost/tareas---keyner-mena-c/Practica-2/public/index.php/usuarios
 // ENDPOINT CON UN PARÁMETRO: http://localhost/tareas---keyner-mena-c/Practica-2/public/index.php/usuarios?id=12
@@ -19,15 +20,17 @@ $queryString = $_SERVER['QUERY_STRING'];
 // Parseamos la cadena de consulta a un arreglo asociativo
 parse_str($queryString, $queryParams);
 
-// Extraemos los parámetros de la consulta
-$id = isset($queryParams['id']) ? $queryParams['id'] : null;
+
 if ($path == "usuarios") {
+    $usuariosController = new UsuariosController();
     switch ($method) {
         case 'GET':
+            // Extraemos los parámetros de la consulta
+            $id = isset($queryParams['id']) ? $queryParams['id'] : null;
             if ($id != "") {
-                echo ('El ID de usuario es ' . $id);
+                $usuariosController->ObtenerPorId($id);
             } else {
-                echo ('Lista de todos los usuarios');
+                $usuariosController->ObtenerTodos();
             }
             break;
         default:
